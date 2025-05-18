@@ -1,0 +1,123 @@
+body, .stApp {
+  background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff) !important;
+  background-size: 400% 400% !important;
+  animation: gradientShift 15s ease infinite !important;
+  min-height: 100vh !important;
+  overflow: hidden;
+  cursor: auto;
+}
+
+.smoke {
+  display: none;
+}
+
+.smoke {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: smokeEffect 2s forwards;
+}
+
+@keyframes smokeEffect {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+#welcome-anim {
+  background: linear-gradient(135deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #8b00ff);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite, fadeOut 2s 2.5s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 9999;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; pointer-events: none; }
+}
+
+#welcome-anim h1 {
+  font-size: 3em;
+  color: #fd5949;
+  margin-bottom: 0.5em;
+  animation: popIn 1s;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 16px #000a;
+}
+
+#welcome-anim h2 {
+  font-size: 1.5em;
+  color: #fdf497;
+  animation: popIn 1.5s;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px #000a;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+.title {
+    text-align: center;
+    color: #ffffff;
+    font-size: 3em;
+    margin-top: 1em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+.subtitle {
+    text-align: center;
+    color: #f0f0f0;
+    font-size: 1.3em;
+    margin-bottom: 1.5em;
+}
+
+.result {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 1.1em;
+    margin-top: 1em;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.color-box {
+    width: 150px;
+    height: 80px;
+    border-radius: 10px;
+    margin-top: 10px;
+    border: 3px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.emoji {
+    font-size: 2em;
+    margin-left: 10px;
+}
