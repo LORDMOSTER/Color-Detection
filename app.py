@@ -99,17 +99,22 @@ st.markdown("<p class='subtitle'>Click on any image to get RGB value & color nam
 uploaded_file = st.file_uploader("Upload an Image", type=["png", "jpg", "jpeg"])
 if uploaded_file:
     image = Image.open(uploaded_file).convert("RGB")
+    
+    # Resize image only if it's wider than max width
     max_width = 800
-    st.image(image, caption="Click anywhere on the image.", use_container_width=True, width=max_width)
+    if image.width > max_width:
+        ratio = max_width / float(image.width)
+        new_height = int(image.height * ratio)
+        image = image.resize((max_width, new_height))
 
+    st.markdown("### <div style='text-align:center;'>Click on the image to pick a color</div>", unsafe_allow_html=True)
     coords = streamlit_image_coordinates(image, key="click")
 
     if coords:
         x, y = int(coords["x"]), int(coords["y"])
         r, g, b = image.getpixel((x, y))
         color_name = get_closest_color(r, g, b)
-        
-        # Emoji based on color
+
         emoji = "🎨"
         if "Blue" in color_name:
             emoji = "🔵"
@@ -122,7 +127,7 @@ if uploaded_file:
 
         st.markdown(f"""
         <div class="result">
-            <div>
+            <div style="color:#333;">
                 <b>Coordinates:</b> ({x}, {y})<br>
                 <b>RGB:</b> ({r}, {g}, {b})<br>
                 <b>Closest Color:</b> {color_name}
