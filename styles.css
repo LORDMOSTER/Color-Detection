@@ -82,42 +82,40 @@ body, .stApp {
 
 .title {
     text-align: center;
-    color: #ffffff;
     font-size: 3em;
-    margin-top: 1em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    font-weight: bold;
+    margin-top: 20px;
+    color: #fd5949;
 }
 
 .subtitle {
     text-align: center;
-    color: #f0f0f0;
-    font-size: 1.3em;
-    margin-bottom: 1.5em;
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #888;
 }
 
 .result {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 15px;
-    border-radius: 10px;
-    color: #ffffff;
-    font-size: 1.1em;
-    margin-top: 1em;
-    line-height: 1.6;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-}
-
-.color-box {
-    width: 150px;
-    height: 80px;
-    border-radius: 10px;
-    margin-top: 10px;
-    border: 3px solid white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    align-items: center;
+    background: #ffffffcc; /* slightly transparent white */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
 }
 
 .emoji {
     font-size: 2em;
-    margin-left: 10px;
+}
+
+.color-box {
+    margin: 20px auto;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
 }
