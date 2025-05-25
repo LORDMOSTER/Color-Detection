@@ -16,6 +16,7 @@
 
 ## 🌐 Hosted on Streamlit
 You can try the app live here:  
+Note: Since its a free version of streamlit the app might go to sleep so if you want to test it please wake it up and use.
 [👉 Click to Launch Coloré on Streamlit](https://color-detection-zzmu2aj88xwcmcs6vbsa2j.streamlit.app/)
 
 ## 📦 Installation
